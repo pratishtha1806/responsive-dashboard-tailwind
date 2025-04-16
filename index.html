@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Dashboard | Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e40af',
+            secondary: '#facc15',
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  
+  <div class="flex h-screen">
+
+    
+    <aside id="sidebar" class="bg-primary text-white w-64 space-y-6 py-7 px-4 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-50">
+      <div class="text-2xl font-bold">📁 My Dashboard</div>
+      <nav class="flex flex-col space-y-4 mt-8">
+        <a href="#" class="hover:bg-blue-600 px-4 py-2 rounded-md transition">🏠 Home</a>
+        <a href="#" class="hover:bg-blue-600 px-4 py-2 rounded-md transition">👤 Profile</a>
+        <a href="#" class="hover:bg-blue-600 px-4 py-2 rounded-md transition">⚙️ Settings</a>
+        <a href="#" class="hover:bg-blue-600 px-4 py-2 rounded-md transition">🚪 Logout</a>
+      </nav>
+    </aside>
+
+    
+    <div class="flex-1 flex flex-col">
+
+      
+      <header class="bg-white shadow-md flex items-center justify-between px-6 py-4">
+        <div class="flex items-center space-x-4">
+          <button id="menu-btn" class="md:hidden text-2xl text-primary focus:outline-none">
+            ☰
+          </button>
+          <h1 class="text-xl font-semibold">Welcome Back 👋</h1>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="text-gray-600">User</span>
+          <img src="profilephoto.webp" alt="User Avatar" class="w-8 h-8 rounded-full">
+        </div>
+      </header>
+
+      
+      <main class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1 overflow-y-auto">
+        
+        
+        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+          <div class="text-3xl text-primary mb-2">📊</div>
+          <h2 class="font-bold text-lg mb-1">Statistics</h2>
+          <p class="text-gray-500">Visitors: <strong>12,345</strong></p>
+        </div>
+
+        
+        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+          <div class="text-3xl text-primary mb-2">👥</div>
+          <h2 class="font-bold text-lg mb-1">Users</h2>
+          <p class="text-gray-500">Active: <strong>789</strong></p>
+        </div>
+
+        
+        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+          <div class="text-3xl text-primary mb-2">📦</div>
+          <h2 class="font-bold text-lg mb-1">Projects</h2>
+          <p class="text-gray-500">Ongoing: <strong>16</strong></p>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+  
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const sidebar = document.getElementById("sidebar");
+
+    btn.addEventListener("click", () => {
+      sidebar.classList.toggle("-translate-x-full");
+    });
+  </script>
+
+</body>
+</html>
